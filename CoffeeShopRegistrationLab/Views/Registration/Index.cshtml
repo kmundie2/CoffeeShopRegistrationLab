@@ -1,0 +1,32 @@
+﻿@model UserRegistrationModel
+@{
+    ViewBag.Title = "User Registration";
+}
+
+<h2>User Registration</h2>
+@using (Html.BeginForm("Index", "Registration", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.LabelFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Password)
+        @Html.TextBoxFor(m => m.Password)
+    </div>
+
+    <button type="submit">Register</button>
+}
